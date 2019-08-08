@@ -24,6 +24,7 @@ void genrate_names(char* n,char* name,int k){
 		return;
 	}
 	int t=n[0]-'0';
+	if(t==0||t==1) genrate_names(n+1,name,k); 
 	for(int i=0;alpha[t][i]!='\0';++i){
 		name[k++]=alpha[t][i];
 		genrate_names(n+1,name,k);
