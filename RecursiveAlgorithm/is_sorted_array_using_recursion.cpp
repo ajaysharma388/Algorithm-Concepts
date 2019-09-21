@@ -13,6 +13,11 @@ bool is_sorted_array(int *a,int i){
 	else return false; 
 }
 
+bool check(int *a,int s,int e){
+	if(s==e) return true;
+	if(a[s]<a[s+1] && check(a,s+1,e)) return true;
+	return false;
+}
 
 int main(){
 	#ifndef ONLINE_JUGDE
