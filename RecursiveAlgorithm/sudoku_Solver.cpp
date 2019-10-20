@@ -1,8 +1,8 @@
-#include <iostream>
-#include <iomanip>
+#include <bits/stdc++.h>
 using namespace std;
 const int D = 10;
-printBoard(int board [D][D] , int n){
+
+void printBoard(int board [D][D] , int n){
     for(int i = 0 ; i < n ; ++i){
         for(int j = 0 ; j < n ;++j){
             cout<<setw(2)<<board[i][j]<<" ";
@@ -56,23 +56,21 @@ bool solveSudoku(int board[D][D] , int n , int row , int col){
 }
 int main()
 {
-    int board[D][D] = {
-        {5,3,0,0,7,0,0,0,0},
-        {6,0,0,1,9,5,0,0,0},
-        {0,9,8,0,0,0,0,6,0},
-        {8,0,0,0,6,0,0,0,3},
-        {4,0,0,8,0,3,0,0,1},
-        {7,0,0,0,2,0,0,0,6},
-        {0,6,0,0,0,0,2,8,0},
-        {0,0,0,4,1,9,0,0,5},
-        {0,0,0,0,8,0,0,7,9}
-    };
-    int n; cin >> n;
-    bool isSucces = solveSudoku(board,n,0,2);
-    if(isSucces){
-        printBoard(board,n);
-    }else{
-        cout<<"Bro! Solve it your self."<<endl;
+    #ifndef ONLINE_JUGDE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    freopen("error.txt","w",stderr);
+    #endif  
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n,grid[D][D];
+    cin >> n;
+    for(int i=0;i<n;++i){
+        for(int j=0;j<n;++j){
+            cin >> grid[i][j];
+        }
     }
+    bool isSuccess = solveSudoku(grid,n,0,0);
+    printBoard(grid,n);
     return 0;
 }
