@@ -87,7 +87,7 @@ int main(){
 	freopen("error.txt","w",stderr);
 	#endif	
 	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    	cin.tie(NULL);
 	Node *head = NULL;
 	buildList(head);
 	print(head);
