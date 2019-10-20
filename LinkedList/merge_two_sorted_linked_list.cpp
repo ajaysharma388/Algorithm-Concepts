@@ -76,7 +76,7 @@ int main(){
 	cout<<"ListB : ";
 	print(head2);
 	head1 = merge(head1,head2);
-	cout<<"Merged List : ";
+	cout<<"Merged List : "; 
 	print(head1);
 	return 0;
 }
