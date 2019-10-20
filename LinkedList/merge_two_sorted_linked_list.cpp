@@ -50,11 +50,12 @@ Node* merge(Node* a,Node* b){
 	Node* c;
 	if(a->data<=b->data){
 		c=a;
-		c->next=merge(a->next,b);
+		a=a->next;
 	}else{
 		c=b;
-		c->next=merge(a,b->next);
+		b=b->next;
 	}
+	c->next=merge(a,b);
 	return c;
 }
 
@@ -70,7 +71,12 @@ int main(){
 	Node *head2 = NULL;
 	buildList(head1);
 	buildList(head2);
+	cout<<"ListA : ";
+	print(head1);
+	cout<<"ListB : ";
+	print(head2);
 	head1 = merge(head1,head2);
+	cout<<"Merged List : ";
 	print(head1);
 	return 0;
 }
