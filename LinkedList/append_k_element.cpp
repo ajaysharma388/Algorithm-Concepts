@@ -32,6 +32,15 @@ public:
 		}
 		return;
 	}
+	int size(){
+		int s = 0;
+		node* h = head;
+		while(h!=NULL){
+			h = h->next;
+			s++;
+		}
+		return s;
+	}
 	void print(){
 		node* temp = head;
 		while(temp!=NULL){
@@ -68,6 +77,24 @@ public:
 		t->next = head;
 		return f;  
 	}
+
+	void append(const int k){
+		if(k==0) return;
+		int s = size();
+		node* prev = NULL;
+		node* current = head;
+		for(int i=0;i<s-k;++i){
+			prev = current;
+			current = current->next;
+		}
+		prev->next = NULL;
+		node* t = current;
+		while(t->next!=NULL){
+			t=t->next;
+		}
+		t->next = head;
+		head = current;
+	}
 };
 
 int main(){
@@ -87,7 +114,7 @@ int main(){
 	}	
 	cin >> k;
 	k = k%n;
-	(*list).head = (*list).rotateList(k);
+	(*list).append(k);
 	(*list).print();
 	return 0;
 }
