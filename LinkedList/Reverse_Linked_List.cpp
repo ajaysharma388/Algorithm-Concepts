@@ -4,80 +4,104 @@ using namespace std;
 #define ll long long int
 #define endl "\n"
 
-class Node{
-	public:
-		int data;
-		Node *next;
-		Node(const int d){
-			data = d;
-			next = NULL;
-		}
+class node{
+public:
+	int data;
+	node* next;
+	node(const int num){
+		data = num;
+		next = NULL;
+	}
 };
 
-void print(Node* head){
-	while(head!=NULL){
-		cout<<head->data<<" ";
-		head = head->next;
-	}
-	cout<<endl;
-}
+int ttlElement(node*);
 
-void insert(Node* &head,const int data){
-	if(head==NULL){
-		head = new Node(data);
-		return;
-	}else{
-		Node *temp = head;
-		while(temp->next!=NULL){
-			temp = temp->next;
+class LinkedList{
+public:
+	int size;
+	node* head;
+	LinkedList(){
+		size=0;
+		head=NULL;
+	} 
+	void push(const int data){
+		size++;
+		node* ptr = new node(data);
+		if(head==NULL){
+			head = ptr;
+			return;
+		}else{
+			node* temp = head;
+			while(temp->next!=NULL){
+				temp = temp->next;
+			}
+			temp->next = ptr;
 		}
-		temp->next = new Node(data);
 	}
-}
+	int getSize() const{
+		return size;
+	}
+	void print(){
+		node* temp = head;
+		if(temp==NULL){
+			cout<<"List is empty."<<endl;
+		}else{
+			while(temp!=NULL){
+				cout<<temp->data<<" ";
+				temp = temp->next;
+			}
+			cout<<endl;
+		}
+	}
+	node* getKth(node* p,int k){
+		node* ptr = p;
+		while(k-- && ptr){
+			ptr=ptr->next;
+		}
+		return ptr;
+	}
+	node* reverse(node* ptr){
+		if(ptr==NULL || ptr->next==NULL) return ptr;
+		node* tail = ptr;
+		node* h = reverse(ptr->next);
+		node* t = h; 
+		while(t->next!=NULL){
+			t=t->next;
+		}
+		t->next = tail;
+		tail->next = NULL; 
+		return h;
+	}
+	node* kreverse(node* ptr,int k){
+		if(ttlElement(ptr)<=k){
+			return reverse(ptr);
+		}
+		node* p = NULL;
+		node* n = ptr;
+		for(int i=0;i<k;++i){
+			p = n;
+			n = n->next;
+		}
+		p->next = NULL;
+		ptr = reverse(ptr);
+		p=ptr;
+		while(p->next!=NULL){ 
+			p=p->next;
+		}
+		p->next = kreverse(n,k);
+	 	return ptr;
+	}
 
-void buildList(Node* &head){
-	int data;
-	cin >> data;
-	while(data!=-1){
-		insert(head,data);
-		cin >> data;
-	}
-}
+};
 
-void reverseRecursive(Node* &current,Node* prev,Node* next){
-	if(current==NULL){
-		current = prev;
-		return;
-	}
-	next = current->next;
-	current->next = prev;
-	prev = current;
-	current = next;
-	reverseRecursive(current,prev,next);
-}
 
-Node* reverse(Node* head){
-	if(head==NULL || head->next==NULL){
-		return head;
+int ttlElement(node* p){
+	int i=0;
+	while(p!=NULL){
+		p=p->next;
+		i++;
 	}
-	Node* sm = reverse(head->next);
-	Node* current = head;
-	current->next->next = current;
-	current->next = NULL;
-	return sm;
-}
-
-void reverseIterative(Node* &head){
-	Node *prev,*next;
-	prev = NULL;
-	next = NULL;
-	while(head!=NULL){
-		next = head->next;
-		head->next = prev;
-		prev = head;
-		head = next;
-	}
-	head = prev;
+	return i;
 }
 
 int main(){
@@ -87,11 +111,15 @@ int main(){
 	freopen("error.txt","w",stderr);
 	#endif	
 	ios_base::sync_with_stdio(false);
-    	cin.tie(NULL);
-	Node *head = NULL;
-	buildList(head);
-	print(head);
-	head = reverse(head);
-	print(head);
+    cin.tie(NULL);
+	int n,k,data;
+	cin >> n >> k;
+	LinkedList *List = new LinkedList();
+	for(int i=0;i<n;++i){
+		cin >> data;
+		(*List).push(data);
+	}
+	(*List).head = (*List).kreverse((*List).head,k);
+	(*List).print();
 	return 0;
 }
