@@ -1,0 +1,6 @@
+5
+Apple
+Banana
+Mango
+Grapes
+Orange
