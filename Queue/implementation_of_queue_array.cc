@@ -4,8 +4,19 @@ using namespace std;
 #define ll long long int
 #define endl "\n"
 
-
-
+class Queue
+{
+public:
+	int *queue
+	Queue(const int size){
+		queue = new int[size];
+	}
+	~Queue(){
+		delete []queue;
+	}
+	
+	
+};
 int main(){
 	#ifndef ONLINE_JUGDE
 	freopen("input.txt","r",stdin);
@@ -14,13 +25,6 @@ int main(){
 	#endif	
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	int n,target;
-	cin >> n;
-	int *a = new int[n];
-	for(int i=0;i<n;++i){
-		cin >> a[i];
-	}
-	cin >> target;
-
+	
 	return 0;
 }
