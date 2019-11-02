@@ -5,7 +5,7 @@ using namespace std;
 #define endl "\n"
 
 // without using pair O(n) complexity.
-
+// Implementation done by mentor.
 void stockSpanPrice(int n,int *a){
 	stack<int> stock;
 	int *ans = new int[n];
@@ -32,7 +32,7 @@ int main(){
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	freopen("error.txt","w",stderr);
-	#endif	
+	#endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	int t;
@@ -44,7 +44,7 @@ int main(){
 		for(int i=0;i<n;++i){
 			cin >> a[i];
 		}
-		stockSpanPrice(n,a); 
+		stockSpanPrice(n,a);
 		delete []a;
 	}
 	return 0;
