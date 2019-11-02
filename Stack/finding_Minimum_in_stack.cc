@@ -4,12 +4,10 @@ using namespace std;
 #define ll long long int
 #define endl "\n"
 
-
-template<typename T>
 class Stack
 {
-	stack<T> s;
-	T currentMin;
+	stack<int> s;
+	int currentMin;
 public:
 	Stack(){
 		currentMin = 0;
@@ -51,7 +49,7 @@ int main(){
 	#endif	
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	Stack<int> s;
+	Stack s;
 	int n;
 	cin >> n;
 	for(int i=0;i<n;++i){
