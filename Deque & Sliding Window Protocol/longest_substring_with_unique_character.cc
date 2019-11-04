@@ -7,7 +7,7 @@ using namespace std;
 // In this function we are using the sliding window protocol for 
 // finding the logest sub string with unique elements.
 
-int longestSubString(string s){
+int longestSubString(string &s){
 	int visited[256];
 	for(int i=0;i<256;++i){ 
 		visited[i] = -1; 
