@@ -57,25 +57,17 @@ int getHeight(Node* root){
 	return max(ls,rs)+1;
 }
 
-void printKthLevel(Node* root,int k){
+void kthlevel(Node* root,int k){
 	if(root==NULL) return;
 	if(k==1){
 		cout<<root->data<<" ";
 		return;
 	}
-	printKthLevel(root->left,k-1);
-	printKthLevel(root->right,k-1);
+	kthlevel(root->left,k-1);
+	kthlevel(root->right,k-1);
 	return;
 }
 
-void levelOrder(Node* root){
-	cout<<" Level Order : ";
-	int height = getHeight(root);
-	for(int i=1;i<=height;++i){
-		printKthLevel(root,i);
-	}
-	return;
-}
 
 int main(){
 	#ifndef ONLINE_JUGDE
@@ -87,7 +79,11 @@ int main(){
 	cin.tie(NULL);
 	Node* root = NULL;
 	root = build();
-	levelOrder(root);
+	int h = getHeight(root);
+	int n,l;
+	cin >> n;
+	l = (n%h)? n%h : n%h+1;
+	kthlevel(root,l);
 	return 0;
 }
 
@@ -98,9 +94,12 @@ int main(){
 // Input : 
 
 // 3 4 5 6 -1 -1 7 -1 -1 8 -1 -1 9 -1 10 11 -1 -1 12 13 -1 -1 14 -1 -1
+// 3
+
 // 8 10 1 -1 -1 -1 3 6 9 -1 -1 7 -1 -1 14 13 -1 -1
+// 3
 
 // Output :  
 
-// Level Order : 3 4 9 5 8 10 6 7 11 12 13 14 
-// Level Order : 8 10 3 1 6 14 9 7 13 
+// 9 7 13 15 
+// 10 3
