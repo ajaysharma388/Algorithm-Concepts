@@ -49,33 +49,6 @@ Node* buildTree(Node* root){
 	return root;
 }
 
-// code for the preorder traversal of the tree.
-
-void preorder(Node* root){
-	if(root==NULL) return;
-	cout<<root->data<<" ";
-	preorder(root->left);
-	preorder(root->right);
-}
-
-// code for the inorder traversal of the tree.
-
-void inorder(Node* root){
-	if(root==NULL) return;
-	inorder(root->left);
-	cout<<root->data<<" ";
-	inorder(root->right);
-}
-
-// code for the postorder traversal of the tree.
-
-void postorder(Node* root){
-	if(root==NULL) return;
-	postorder(root->left);
-	postorder(root->right);
-	cout<<root->data<<" ";
-}
-
 int getHeight(Node* root){
 	if(root==NULL) return 0;
 	int ls,rs;
@@ -84,22 +57,16 @@ int getHeight(Node* root){
 	return max(ls,rs)+1;
 }
 
-// void levelOrder(Node* root){
-// 	if(root == NULL) return;
-// 	queue<Node*> Q;
-// 	Q.push(root);
-// 	while(!Q.empty()){
-// 		Node* current = Q.front();
-// 		cout<<current->data<<" ";
-// 		if(current->left!=NULL){
-// 			Q.push_back(root->left);
-// 		}
-// 		if(current->left!=NULL){
-// 			Q.push_back(root->left);
-// 		}
-// 		Q.pop_front();
-// 	}
-// }
+void levelOrder(Node* root,int k){
+	if(root==NULL) return;
+	if(k==1){
+		cout<<root->data<<" ";
+		return;
+	}
+	levelOrder(root->left,k-1);
+	levelOrder(root->right,k-1);
+	return;
+}
 
 
 int main(){
@@ -112,14 +79,11 @@ int main(){
 	cin.tie(NULL);
 	Node* root = NULL;
 	root = build();
-	cout<<" Pre Order : ";
-	preorder(root);
-	cout<<endl<<" In Order : ";
-	inorder(root);
-	cout<<endl<<" Post Order : ";
-	postorder(root);
-	cout<<endl<<" Level Order : ";
-//	levelOrder(root);
+	int h = getHeight(root);
+	cout<<" Level Order : ";
+	for(int i=1;i<=h;++i){
+		levelOrder(root,i);
+	}
 	return 0;
 }
 
@@ -134,10 +98,4 @@ int main(){
 
 // Output :  
 
-//  Pre Order : 3 4 5 6 7 8 9 10 11 12 13 14 
-//  In Order : 6 5 7 4 8 3 9 11 10 13 12 14 
-//  Post Order : 6 7 5 8 4 11 13 14 12 10 9 3 
-
-//  Pre Order : 8 10 1 3 6 9 7 14 13 
-//  In Order : 1 10 8 9 6 7 3 13 14 
-//  Post Order : 1 10 9 7 6 13 14 3 8 
+// Level Order : 8 10 3 1 6 14 9 7 13 15 16 17 
