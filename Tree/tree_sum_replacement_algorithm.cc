@@ -36,6 +36,10 @@ void traverse(Node* root){
 	return;
 }
 
+// replaces the sum of the children from it's current value
+// uses postorder traversal or bottom up approach and solves 
+// the problem in O(n) time in the worst case.
+
 int replaceSum(Node* &r){
 	if(r==NULL) return 0;
 	if(r->left==NULL && r->right==NULL) return r->data;
@@ -82,9 +86,15 @@ int main(){
 	return 0;
 }
 
+// Input : 
 
-// 3 
-// 4 9 
-// 5 8 10 
-// 6 7 11 12 
+// 3 4 5 6 -1 -1 7 -1 -1 8 -1 -1 9 -1 10 11 -1 -1 12 13 -1 -1 14 -1 -1
+
+
+// Output : 
+
+// 99 
+// 26 60 
+// 13 8 50 
+// 6 7 11 27 
 // 13 14 
