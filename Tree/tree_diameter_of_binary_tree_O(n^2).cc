@@ -18,7 +18,6 @@ public:
 	~Node();
 };
 
-
 // This implementation does'nt take the root pointer as the input.
 // and at the end of the processing it returns the address of new root 
 // node.
@@ -49,10 +48,31 @@ Node* buildTree(Node* root){
 	return root;
 }
 
-int sum(Node* root){
-	return (root==NULL)? 0
-			:root->data+sum(root->left)+sum(root->right);
+
+void traverse(Node* root){
+	if(root==NULL) return;
+	cout<<root->data<<" ";
+	traverse(root->left);
+	traverse(root->right);
+	return;
 }
+
+int height(Node* root){
+	return (root==NULL)
+		? 	0
+		:	1+max(height(root->left),height(root->right));
+}
+
+int diameter(Node *root){
+	if(root==NULL) return 0;
+	int h1 = height(root->left);
+	int h2 = height(root->right);
+	int op1 = h1+h2;
+	int op2 = diameter(root->left);
+	int op3 = diameter(root->right);
+	return max(op1,max(op2,op3));
+}
+
 
 
 int main(){
@@ -65,7 +85,7 @@ int main(){
 	cin.tie(NULL);
 	Node* root = NULL;
 	root = build();
-	cout<<sum(root)<<endl;
+	cout<<diameter(root)<<endl;
 	return 0;
 }
 
@@ -76,10 +96,10 @@ int main(){
 // Input : 
 
 // 3 4 5 6 -1 -1 7 -1 -1 8 -1 -1 9 -1 10 11 -1 -1 12 13 -1 -1 14 -1 -1
-// 8 10 1 -1 -1 -1 3 6 9 -1 -1 7 -1 -1 14 13 -1 -1
+// 8 10 1 -1 -1 6 9 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
 
 // Output :  
 
-// 71
-// 102
+// 7
+// 6
 
