@@ -63,6 +63,9 @@ int height(Node* root){
 		:	1+max(height(root->left),height(root->right));
 }
 
+// Gives the diameter of the tree in O(n^2) order.
+// uses top down approach to do so.
+
 int diameter(Node *root){
 	if(root==NULL) return 0;
 	int h1 = height(root->left);
@@ -72,7 +75,6 @@ int diameter(Node *root){
 	int op3 = diameter(root->right);
 	return max(op1,max(op2,op3));
 }
-
 
 
 int main(){

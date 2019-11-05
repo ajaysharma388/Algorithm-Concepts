@@ -67,7 +67,8 @@ void traverse(Node* root){
 	return;
 }
 
-
+// Gives the diameter of the tree in O(n) order.
+// uses bottom up approach to do so. 
 
 Pair diameter(Node *root){
 	Pair c;
