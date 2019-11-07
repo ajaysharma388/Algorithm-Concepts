@@ -129,7 +129,9 @@ void inorder(Node*root){
 bool searchInBST(Node* root,int data){
 	if(root==NULL) return false;
 	if(root->data==data) return true;
-	return searchInBST(root->left,data) || searchInBST(root->right,data); 
+	return (root->data >= data) 
+		? searchInBST(root->left,data) 
+		: searchInBST(root->right,data); 
 }
 
 
@@ -143,7 +145,9 @@ int main(){
 	cin.tie(NULL);
 	Node* root = NULL;
 	root = buildBST();
-	if(searchInBST(root,13)){
+	int element;
+	cin >> element;
+	if(searchInBST(root,element)){
 		cout<<"Present in Tree.";
 	}else{
 		cout<<"Not Present in Tree.";
