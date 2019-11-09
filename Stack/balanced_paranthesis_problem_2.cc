@@ -7,13 +7,21 @@ using namespace std;
 
 bool check(string &exp){
 	int n = exp.length();
+	if(n&1) return false; 
 	stack<char> s;
 	for(int i=0;i<n;++i){
-		if(exp[i]=='('){
+		if(exp[i]=='(' || exp[i]=='{' || exp[i]=='['){
 			s.push(exp[i]);
 		}
-		else if(exp[i]==')' && !s.empty()){
+		else if(exp[i]==')' && !s.empty() && s.top()=='('){
 			s.pop(); 
+		}else if(exp[i]==']' && !s.empty() && s.top()=='['){
+			s.pop(); 
+		}
+		else if(exp[i]=='}' && !s.empty() && s.top()=='{'){
+			s.pop(); 
+		}else{
+			return false;
 		}
 	}
 	return s.empty();
