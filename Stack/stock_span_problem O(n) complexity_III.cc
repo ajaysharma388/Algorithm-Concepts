@@ -6,25 +6,15 @@ using namespace std;
 
 // without using pair O(n) complexity.
 // Implementation done by mentor.
-void stockSpanPrice(int n,int *a){
-	stack<int> stock;
-	int *ans = new int[n];
-	for(int day=0;day<n;++day){
-		int currPrice = a[day];
-		while(!stock.empty() && a[stock.top()]<currPrice){
-			stock.pop();
-		}
-		int betterDay = (stock.empty())?0:stock.top();
-		int span = day - betterDay;
-		ans[day] = span;
-		stock.push(day);
-	}
+
+void stockSpan(int n,int *a){
+	stack<int> s;
+	int *res = new int[n];
+	// code here.
 	for(int i=0;i<n;++i){
-		cout<<ans[i]<<" ";
+		cout<<res[i]<<" ";
 	}
-	cout<<"END"<<endl;
-	delete []ans;
-	return;
+	cout<<"END";
 }
 
 int main(){
@@ -41,7 +31,7 @@ int main(){
 	for(int i=0;i<n;++i){
 		cin >> a[i];
 	}
-	stockSpanPrice(n,a);
+	stockSpan(n,a);
 	delete []a;
 	return 0;
 }
