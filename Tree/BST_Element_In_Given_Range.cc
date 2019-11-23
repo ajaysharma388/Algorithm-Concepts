@@ -83,3 +83,15 @@ int main(){
 	}
 	return 0;
 }
+
+// Sample Input : 
+
+// 1
+// 5
+// 4 3 2 5 6
+// 3 5
+
+// Sample Output :
+
+// # Preorder : 4 3 2 5 6 
+// # Nodes within range are : 3 4 5  
