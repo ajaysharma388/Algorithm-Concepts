@@ -62,13 +62,13 @@ public:
 		}
 	}
 
-	node<T>* search(const string key){
+	T* search(const string key){
 		int index = HashFn(key);
 		// now iterate over the linked List inside the bucket.
 		node<T>* temp = buckets[index];
 		while(temp!=NULL){
 			if(temp->key == key){
-				return temp;
+				return &(temp->value);
 			}
 			temp = temp->next;
 		}

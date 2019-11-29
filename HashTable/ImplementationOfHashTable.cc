@@ -29,6 +29,9 @@ int main(){
 	ht.Delete("Grapes");
 	cout<<"--------------Removed : Grapes-----------------"<<endl;
 	ht.print();
+	cout<<"--------------Searching : Chicku-----------------"<<endl;
+	int *price = ht.search("Chicku");
+	cout<<" Chicku : "<<*price<<endl;
 	return 0;
 }
 
@@ -74,3 +77,5 @@ int main(){
 // 5 . bucket [4] => Guava 
 // 6 . bucket [5] => Banana 
 // 7 . bucket [6] => Chicku PineApple 
+// --------------Searching : Chicku-----------------
+//  Chicku : 80
