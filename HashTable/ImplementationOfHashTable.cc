@@ -38,6 +38,10 @@ int main(){
 	cout<<"--------------Searching : Chicku-----------------"<<endl;
 	int *price = ht.search("Chicku");
 	cout<<" Chicku : "<<*price<<endl;
+	ht["Chicku"] = 100;
+	cout<<"--------------Searching : Chicku-----------------"<<endl;
+	price = ht.search("Chicku");
+	cout<<" Chicku : "<<*price<<endl;
 	return 0;
 }
 
@@ -90,3 +94,5 @@ int main(){
 // 13 . bucket [12] => Pomegrant Orange 
 // --------------Searching : Chicku-----------------
 //  Chicku : 80
+// --------------Searching : Chicku-----------------
+//  Chicku : 100

@@ -135,4 +135,14 @@ public:
 			cur = cur->next;
 		} 
 	}
+	T& operator[](const string key){
+		T* temp = search(key);
+		if(temp==NULL){
+			T garbage;
+			insert(key,garbage);
+			T* value = search(key);
+			return *value;
+		}
+		return *temp;
+	}
 };
