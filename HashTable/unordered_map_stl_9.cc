@@ -48,9 +48,11 @@ void createCycle(node*&root){
 bool detectCycle(node*root){
 	unordered_map<node*,bool> table;
 	while(root!=NULL){
+		// check if already visited.
 		if(table[root]==true){
 			return true;
 		}
+		// marking current node as the visited.
 		table[root] = true;
 		root = root->next;
 	}
