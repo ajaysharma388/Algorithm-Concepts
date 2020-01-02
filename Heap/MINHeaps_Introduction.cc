@@ -17,6 +17,9 @@ public:
 	T minData(){
 		return v[1];
 	}
+	T getKth(int k){
+		return v[k-1];
+	}
 	void pop(){
 		swap(v[1],v[lastIndex-1]);
 		lastIndex--;
