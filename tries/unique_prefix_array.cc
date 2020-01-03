@@ -54,16 +54,6 @@ public:
 		}
 		return temp->isTerminal;
 	}
-	void traverse(string str){
-		node*temp = root;
-		for(int i=0; i < str.length(); ++i){
-			char ch = str[i];
-			if(temp->children.count(ch)){
-				temp = temp->children[ch];
-				cout << temp->data << " : " << temp->count << endl;
-			}
-		}
-	}
 	string scan(string str){
 		node*temp = root;
 		string res = "";
