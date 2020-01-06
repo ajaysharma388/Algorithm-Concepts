@@ -40,9 +40,12 @@ Node* insertInBST(Node* root,int data){
 // it uses the above method insertInBST to do so.
 
 Node* buildBST(){
-	int data;
-	Node* root = NULL;
-	while(cin>>data && data!=-1){
+	Node*root = NULL;
+	int n;
+	cin >> n;
+	for(int i=0;i<n;++i) {
+		int data;
+		cin >> data;
 		root = insertInBST(root,data);
 	}
 	return root;
@@ -78,11 +81,11 @@ void levelOrder(Node* root){
 
 // Method for the inorder traversal of the binary tree.
 
-void inorder(Node*root){
+void preorder(Node*root){
 	if(root==NULL) return;
-	inorder(root->left);
 	cout<<root->data<<" ";
-	inorder(root->right);
+	preorder(root->left);
+	preorder(root->right);
 	return;
 }
 
@@ -145,12 +148,19 @@ int main(){
 	#endif	
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	Node* root = NULL;
-	root = buildBST();
-	int element;
-	cin >> element;
-	root = deleteInBST(root,element);
-	levelOrder(root);
+	int TestCases;
+	cin >> TestCases;
+	while(TestCases--){
+		Node* root = buildBST();
+		int m;
+		cin >> m;
+		while(m--){
+			int element;
+			cin >> element;
+			root = deleteInBST(root,element);
+		}
+		preorder(root);
+	}
 	return 0;
 }
 
@@ -160,6 +170,12 @@ int main(){
 
 // Input : 
 
-// 8 10 1 3 6 9 7 14 13 -1
+// 1
+// 7
+// 5 3 2 4 7 6 8
+// 3
+// 2 3 5
 
 // Output :  
+
+// 6 4 7 8
