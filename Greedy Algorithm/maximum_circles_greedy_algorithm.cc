@@ -37,3 +37,15 @@ int main(){
  	cout << (n-count) << endl;
 	return 0;
 }
+
+// Sample Input :
+
+// 4
+// 1 1
+// 2 1
+// 3 1
+// 4 1
+
+// Sample Output : 
+
+// 3
