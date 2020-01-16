@@ -71,7 +71,7 @@ int main(){
 	g.addEdge(1,5,false);
 	g.addEdge(2,4,false);
 	g.addEdge(2,3,false);
-	g.addEdge(3,0,false);
+	// g.addEdge(3,0,false);
 	g.addEdge(4,5,false);
 	g.printAdjList();
 	if(g.cyclicDFS()) {
@@ -81,3 +81,20 @@ int main(){
 	}
 	return 0;
 }
+
+// Sample Output :
+
+// 0 --> 2, 1, 
+// 1 --> 5, 
+// 2 --> 4, 3, 
+// 4 --> 5, 
+// Cycle Not Detected.
+
+// Un comment line 74 for this output.
+
+// 0 --> 2, 1, 
+// 1 --> 5, 
+// 2 --> 4, 3, 
+// 3 --> 0, 
+// 4 --> 5, 
+// Cycle Detected.

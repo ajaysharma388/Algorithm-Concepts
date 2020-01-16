@@ -72,7 +72,7 @@ int main(){
 	g.addEdge(1,2);
 	g.addEdge(1,4);
 	g.addEdge(2,3);
-	g.addEdge(4,3);
+	// g.addEdge(4,3);
 	g.printAdjList();
 	if(g.cyclicDFS()) {
 		cout << "Cycle Detected." << endl;
@@ -81,3 +81,19 @@ int main(){
 	}
 	return 0;
 }
+
+// Sample Output :
+
+// 1 --> 2, 4, 
+// 2 --> 1, 3, 
+// 3 --> 2, 4, 
+// 4 --> 1, 3, 
+// Cycle Detected.
+
+// comment line 75 for this Output.
+
+// 1 --> 2, 4, 
+// 2 --> 1, 3, 
+// 3 --> 2, 
+// 4 --> 1, 
+// Cycle Not Detected.
