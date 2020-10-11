@@ -5,7 +5,7 @@ using namespace std;
 #define endl "\n"
 
 // This solution is based out of the recursive approach so the time complexity 
-// of this solution is of the Order O(amount^n).
+// of this solution is of the Order O(n^amount).
 // where amount is the for what we are looking for the changes.
 // n is the types of coins that we have had as the option. 
 
