@@ -24,9 +24,9 @@ int minCoins(int coins[],int amount,int n) {
 }
 
 // This Solution is based out of Bottom UP dynamic programming.
-// The time complexity of this approach is O(N) if the coins
-// Options are contant.
-// Space Complexity would be O(N).
+// The time complexity of this approach is O(N*Amt). And if the coins
+// Options are contant you can say it is O(Amt).
+// Space Complexity would be O(Amt).
 
 int minCoinsDp(int coins[],int amount,int n) {
 	int *dp = new int[amount+1];
