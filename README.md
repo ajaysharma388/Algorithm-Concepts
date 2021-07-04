@@ -2,38 +2,39 @@
 
 ## 4.1 Arrays.
 	1.  Find a pair in an array of size 'n', whose sum is X
-	2.  Find a majority element in an array of size 'n'
-	3.  Find the number occuring odd number of times in a given array of size 'n'
-	4.  Algorithm to reverse an array
-	5.  Algorithm to rotate array of size 'n' by 'd' elements
-	6.  Algorithm to segregate 0's and 1's in an array
-	7.  Find the maximum difference between two elements such that larger element appears after the smaller element
-	8.  Algorithm to merge an array of size 'n' into another array of size 'm+n'.
-	9.  Algorithm to find two repeating numbers in a given array
-	10. Algorithm to find duplicate elements in O(n) time and O(1) extra space, for a given array of size 'n'
-	11. Find the index in an array such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
-	12. Algorithm to find the maximum difference of j - i such that a[j] > a[i], for a given an array of 'n' elements.
-	13. Algorithm to find the triplet whose sum is X
-	14. Algorithm to find a sub array whose sum is X
-	15. Algorithm to find the largest sub array with equal number of 0's and 1's
-	16. Algorithm to find the number of triangles that can be formed with three different array elements as three sides of triangles, for a given unsorted array of 	    n elements
-	17. Algorithm to find the smallest integer value that can't be represented as sum of any subset of a given array.
-	18. Algorithm to find the common element in given three sorted arrays
-	19. Algorithm to find the contiguous sub-array with maximum sum, for a given array of postive and negative numbers.
-	20. Given an array of integers, sort the array into a wave like array and return it. (arrange the element into a sequence such that a1>=a2<=a3>=a4<=a5----etc.
-	21. Algorithm to find the next greater number formed after permuting the digits of given number
-	22. Algorithm to find the sum of bit difference in all pairs that can be formed from array of n elements.
+	2.  Find all pair in an array of size 'n', whose sum is X
+	3.  Find a majority element in an array of size 'n'
+	4.  Find the number occuring odd number of times in a given array of size 'n'
+	5.  Algorithm to reverse an array
+	6.  Algorithm to rotate array of size 'n' by 'd' elements
+	7.  Algorithm to segregate 0's and 1's in an array
+	8.  Find the maximum difference between two elements such that larger element appears after the smaller element
+	9.  Algorithm to merge an array of size 'n' into another array of size 'm+n'.
+	10.  Algorithm to find two repeating numbers in a given array
+	11. Algorithm to find duplicate elements in O(n) time and O(1) extra space, for a given array of size 'n'
+	12. Find the index in an array such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
+	13. Algorithm to find the maximum difference of j - i such that a[j] > a[i], for a given an array of 'n' elements.
+	14. Algorithm to find the triplet whose sum is X
+	15. Algorithm to find a sub array whose sum is X
+	16. Algorithm to find the largest sub array with equal number of 0's and 1's
+	17. Algorithm to find the number of triangles that can be formed with three different array elements as three sides of triangles, for a given unsorted array of 	    n elements
+	18. Algorithm to find the smallest integer value that can't be represented as sum of any subset of a given array.
+	19. Algorithm to find the common element in given three sorted arrays
+	20. Algorithm to find the contiguous sub-array with maximum sum, for a given array of postive and negative numbers.
+	21. Given an array of integers, sort the array into a wave like array and return it. (arrange the element into a sequence such that a1>=a2<=a3>=a4<=a5----etc.
+	22. Algorithm to find the next greater number formed after permuting the digits of given number
+	23. Algorithm to find the sum of bit difference in all pairs that can be formed from array of n elements.
 	    Trapping rain water problem
-	23. Algorithm to find the minimum number of platforms required for the railway station so that no train waits according to arrival and departure time
-	24. Rotate 2-Dimentional array
-	25. Lock and Key problem
-	26. Rearrange an array so that a[i] becomes a[a[i]] with O(1) extra space
-	27. Traverse a matrix of integers in spiral form
-	28. Given an array consisting 0's, 1's and 2's, write a algorithm to sort it
-	29. Given a positive number X, print all jumping numbers(all adjacent digits in it differ by 1) smaller than or equal to X
-	30. Given an array and an integer 'k', find the maximum, for each and every contiguous subarray of size 'k'
-	31. Search an element in a sorted rotated array
-	32. Find the maximum value of a[j]-a[i]+a[l]-a[k], for every four indices i, j, k, l such that i< j < k < l.
+	24. Algorithm to find the minimum number of platforms required for the railway station so that no train waits according to arrival and departure time
+	25. Rotate 2-Dimentional array
+	26. Lock and Key problem
+	27. Rearrange an array so that a[i] becomes a[a[i]] with O(1) extra space
+	28. Traverse a matrix of integers in spiral form
+	29. Given an array consisting 0's, 1's and 2's, write a algorithm to sort it
+	30. Given a positive number X, print all jumping numbers(all adjacent digits in it differ by 1) smaller than or equal to X
+	31. Given an array and an integer 'k', find the maximum, for each and every contiguous subarray of size 'k'
+	32. Search an element in a sorted rotated array
+	33. Find the maximum value of a[j]-a[i]+a[l]-a[k], for every four indices i, j, k, l such that i< j < k < l.
 
 ## 4.2 Linked List
 	1.  Algorithm to find the nth node from end of the linked list
