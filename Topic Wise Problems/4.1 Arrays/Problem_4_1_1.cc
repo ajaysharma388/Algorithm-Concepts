@@ -49,7 +49,6 @@ int main() {
 
 
 /*
-
 Sample Testcase:
 
 10 18
@@ -58,7 +57,4 @@ Sample Testcase:
 Sample Output:
 
 Pair found: 8, 10
-
-
-
 */
