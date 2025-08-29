@@ -1,8 +1,8 @@
 # Algorithm-Concepts & Algorithm Course Curriculam.
 
 ## 4.1 Arrays.
-	1.  Find a pair in an array of size 'n', whose sum is X
-	2.  Find all pair in an array of size 'n', whose sum is X
+	1.  Find a pair in an array of size 'n', whose sum is X      [X]
+	2.  Find all pair in an array of size 'n', whose sum is X    [X] 
 	3.  Find a majority element in an array of size 'n'
 	4.  Find the number occuring odd number of times in a given array of size 'n'
 	5.  Algorithm to reverse an array
