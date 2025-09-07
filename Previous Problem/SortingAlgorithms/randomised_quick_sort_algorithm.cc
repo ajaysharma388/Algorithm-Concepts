@@ -23,7 +23,8 @@ void quick_Sort(int a[],int s,int e){
 void randomised(int a[],int s,int e){
     srand(time(NULL));
     int j;
-    for(int i=e;i>0;i--){
+    for(int i=e;i>0;i--)
+    {
         j=rand()%(i+1);
         swap(a[i],a[j]);
     }
