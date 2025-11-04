@@ -18,4 +18,3 @@ class Solution:
 
             return node_map[root.val]
         return dfs(node)
-        
