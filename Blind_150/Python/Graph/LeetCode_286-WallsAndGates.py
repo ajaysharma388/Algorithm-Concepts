@@ -1,3 +1,46 @@
+
+
+class Solution:
+    def islandsAndTreasure(self, grid: List[List[int]]) -> None:
+        r, c = len(grid), len(grid[0])
+        vis = [[False for _ in range(c)] for _ in range(r)]
+        directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+        queue = deque()
+        for i in range(0, r):
+            for j in range(0, c):
+                # this is the entry gate of the tresure chest
+                if grid[i][j] == 0: 
+                    queue.append((i, j))
+                    vis[i][j] = True
+        
+        # since we have the cordinates in the queue we will run the BFS now.
+        while queue:
+            # now we can iterate over all the chidrens and then do the calculation.
+            cur_queue = deque()
+            for _ in range(len(queue)):
+                (x, y) = queue.popleft()
+                dis = grid[x][y]
+                for (dx, dy) in directions:
+                    _x = x + dx
+                    _y = y + dy
+                    if _x < 0 or _x >= r or _y < 0 or _y >= c:
+                        continue
+                    elif grid[_x][_y] == -1 or grid[_x][_y] == 0 or vis[_x][_y]:
+                        continue
+                    grid[_x][_y] = min(grid[_x][_y], dis + 1)
+                    cur_queue.append((_x, _y))
+                    vis[_x][_y] = True
+
+            if len(cur_queue):
+                queue = cur_queue
+
+        return 
+
+
+# The below approach failed on the larger test Case So, I came up with the 
+# Another approach in which I am using BFS instead of DFS. Which is coded just above the 
+# in the same file.
+
 class Solution:
     # this is the brute force approach this will take a loat of time.
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
