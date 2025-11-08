@@ -1,5 +1,3 @@
-
-
 class Solution:
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
         r, c = len(grid), len(grid[0])
