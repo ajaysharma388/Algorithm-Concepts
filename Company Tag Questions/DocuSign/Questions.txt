@@ -1,0 +1,106 @@
+Here are examples of recently reported DSA questions and coding patterns to focus on:
+Recently Reported DSA/Coding Questions
+
+* Large File String Search (Machine Coding/Algorithmic):
+* Problem: Find an input string in a file that is too large to fit in memory. You are given an API to access the file character by character (char getChar();).
+* This tests your understanding of memory-efficient algorithms and streaming data processing (e.g., using a rolling hash or a fixed-size window/buffer).
+
+* Array Manipulation Operations:
+* Problem: Given an array, implement functions to perform basic add, remove, and update operations efficiently and return the resulting array.
+* This focuses on time complexity for basic data structure operations.
+* Concurrency/Optimization Problem:
+* Problem: Given a database scenario where it acquires a write lock every 15 minutes and is read-heavy (acquiring a read lock every 30 seconds), how would you optimize the locking mechanism?
+* This question blends DSA concepts with real-world concurrency and database knowledge, which is common for senior roles.
+
+Common DSA Topics and LeetCode Patterns
+Candidates consistently report that DocuSign's coding rounds assess proficiency across core DSA areas, often matching medium-difficulty LeetCode questions. You should prepare extensively on:
+ * Arrays and Strings:
+   * Two Sum
+   * Longest Substring Without Repeating Characters
+ * Linked Lists:
+   * Reverse a Linked List
+   * Merge Two Sorted Lists
+ * Trees and Graphs:
+   * Binary Tree Inorder Traversal
+   * Number of Islands (BFS/DFS)
+ * Sorting and Searching:
+   * Merge Intervals
+   * Search in Rotated Sorted Array
+ * Dynamic Programming (DP):
+   * Climbing Stairs
+   * Longest Increasing Subsequence
+ * Hash Tables:
+   * Group Anagrams
+   * Top K Frequent Elements
+
+Senior Level System Design Topics
+
+While you specifically asked for DSA, note that for a Senior Software Engineer role, System Design is a critical technical round. You must be prepared to design scalable systems. Common topics include:
+
+ * Design a Rate Limiter for a microservices API.
+ * Design a system for managing a Distributed Search Engine.
+ * Design a social network's Friend Recommendation System.
+ * Design a URL Shortener.
+ * Design a Notification System for an application.
+
+
+
+ System Design Topic,Key DSA/Concepts to Discuss
+Secure Digital Signature System,"Hashing (SHA-256/3), Checksums, Asymmetric Cryptography"
+Document/File Management,"Trie (for auto-complete/search), B-Trees (for database indexing)"
+Real-time Communication (like chat/messaging),"Graph traversal (friend graph), Priority Queues (for message delivery)"
+Load Balancing,Consistent Hashing (for distributed caching)
+
+
+That's a great question. As a **Senior Software Engineer** candidate for DocuSign in Bengaluru, your focus must be equally split between complex DSA patterns and large-scale **System Design**.
+
+Based on recent interview experiences, here is a consolidated list of must-do DSA topics and representative LeetCode questions, along with the required System Design focus.
+
+---
+
+## 1. Core Data Structures & Algorithms (DSA)
+
+DocuSign coding rounds often feature Medium to Hard problems that test proficiency in core data structures and algorithmic patterns.
+
+
+
+### D. Designing Data Structures
+For a Senior role, you may be asked to implement a custom data structure or utilize advanced ones.
+* **Design an LRU Cache (LeetCode #146):** Must implement using a **Doubly Linked List** and a **Hash Map** for $\mathcal{O}(1)$ performance.
+* **Insert Delete GetRandom O(1) (LeetCode #380):** Requires combining a `HashMap` and an `Array` for average $\mathcal{O}(1)$ operations.
+* **Implement Trie (Prefix Tree) (LeetCode #208):** Essential for string/prefix related applications.
+
+---
+
+## 2. System Design Focus (Senior Level) 🛠️
+
+For a Senior role, one or two rounds will be dedicated to **System Design (HLD/LLD)**. Your Bangalore-based interview will heavily focus on **scalability, availability, and resilience**.
+
+### A. Core Scalability Topics
+* **Design a Rate Limiter** (Global/Distributed): Discuss algorithms (token bucket, leaky bucket) and implementation using Redis/Distributed Caching.
+* **Design a URL Shortener:** Focus on hashing, collision resolution, and database selection (NoSQL vs. SQL).
+* **Design a File Storage/Document Management System:** Highly relevant to DocuSign's business. Discuss sharding, replication, and Content Delivery Networks (CDNs).
+* **Design a Notification System:** Focus on push services, message queues (Kafka/RabbitMQ), and different delivery models.
+
+### B. DocuSign-Relevant Topics
+While not exact DSA questions, be prepared to discuss the **Data Structures/Algorithms** used to support these systems.
+
+| System Design Topic | Key DSA/Concepts to Discuss |
+| :--- | :--- |
+| **Secure Digital Signature System** | **Hashing** (SHA-256/3), **Checksums**, Asymmetric **Cryptography** |
+| **Document/File Management** | **Trie** (for auto-complete/search), **B-Trees** (for database indexing) |
+| **Real-time Communication** (like chat/messaging) | **Graph** traversal (friend graph), **Priority Queues** (for message delivery) |
+| **Load Balancing** | **Consistent Hashing** (for distributed caching) |
+
+### 🔑 Final Preparation Strategy for Senior Candidates
+
+1.  **Solve by Pattern:** Don't just solve the 50 questions—master the core patterns (Sliding Window, Two Pointers, Top K/Heap, BFS/DFS, DP).
+2.  **Trade-offs & Complexity:** For every problem, clearly articulate the **Time and Space Complexity** ($\mathcal{O}$ notation) and discuss alternative approaches and their trade-offs.
+3.  **Code Quality:** Write production-ready, clean, and modular code. Since you're a Senior candidate, code quality and bug-free implementation under pressure are paramount.
+
+
+1. notification service
+2. Design a schema representing a deck of playing cards for playing poker
+3. Design a database for a ride-sharing app
+4. Design and describe key components of a RAG pipeline for a financial data chatbot system
+5. Designing a Fraud Detection System
