@@ -1,6 +1,7 @@
 # 📘 Algorithm Concepts & Course Curriculum
 
 ## 1. Arrays
+
 - [Find a pair with sum X](/Topic%20Wise%20Problems/4.1%20Arrays/Problem_4_1_1.cc)  
 - [Find all pairs with sum X](/Topic%20Wise%20Problems/4.1%20Arrays/Problem_4_1_2.cc) 
 - [Majority element](Arrays/03_majority_element.cpp)  
