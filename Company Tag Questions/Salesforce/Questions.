@@ -1,0 +1,42 @@
+Questions.
+
+1.  Boundary traversal of a tree (Done)
+2.  matrix spiral print(Done)
+3.  Minimum number of jumps to reach an index(done)
+4.  Word ladder (done)
+5.  Number of islands (done)
+6.  Merge k sorted lists (done)
+7.  Group anagrams together (done)
+8.  Print zigzag order of binary tree(done)
+9.  Inserting into bst(done)
+10. Trapping rainwater.  [Done]
+11. Meeting room scheduling [Done]
+12. convert the tree into doubly LL [Done]
+13. Maximum length substring with no repeating characters [Done]
+14. Binary search in rotated array(1 and 2)(done)
+15. Determine alien language(Done) 
+16. Remove duplicate letter and return smallest lexicographic substring(Done)
+17. Minimum operations to transform 1 string into another (Done)
+18. character Player card game 
+19. coin change
+20. string Matching algorithm (kmp)
+21. Modified island problem - gap less than k diagnol direction added(I have the gist of it we can do it pretty easily.)
+
+Round 2
+
+1. Parking Lot LLD
+2. Design a Movie ticket booking system like BookMyShow
+3. Design Game of Chess
+4. Design a Text Editor/Word Processor like Microsoft Word
+5. Design an elevator management System with multiple lifts
+6. Design a restaurant food ordering and rating system like Zomato, Swiggy, Uber eats etc.
+7. Design a customer issue resolution system
+8. Design an order and inventory management system
+9. Design Splitwise for splitting bills
+10. Design Meeting Scheduler
+11. Design a cab agreegator service LLD(done)
+12. Design Train booking system irctc lld
+13. Design Vending machine lld
+14. design Ludo Game
+15. Design Health care appointment booking system lld
+16. Lld for webhook delivery service
