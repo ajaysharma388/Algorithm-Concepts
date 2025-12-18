@@ -1,8 +1,9 @@
 # 📘 Algorithm Concepts & Course Curriculum
 
 ## 1. Arrays
-- [Find a pair with sum X](Arrays/01_pair_sum.cpp)  
-- [Find all pairs with sum X](Arrays/02_all_pairs_sum.cpp)  
+
+- [Find a pair with sum X](/Topic%20Wise%20Problems/4.1%20Arrays/Problem_4_1_1.cc)  
+- [Find all pairs with sum X](/Topic%20Wise%20Problems/4.1%20Arrays/Problem_4_1_2.cc) 
 - [Majority element](Arrays/03_majority_element.cpp)  
 - [Number occurring odd times](Arrays/04_number_odd_times.cpp)  
 - [Reverse an array](Arrays/05_reverse_array.cpp)  
