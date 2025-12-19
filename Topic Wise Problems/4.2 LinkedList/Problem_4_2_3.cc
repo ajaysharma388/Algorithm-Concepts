@@ -30,18 +30,6 @@ public:
 
 class LinkedList {
 private:
-	int getLength()
-	{
-		int len = 0;			
-		Node* ptr = this->head; 
-		while(ptr)
-		{
-			ptr = ptr->next;
-			len++;
-		}
-		return len;
-	}
-
 	Node* createList(int i, int n)
 	{
 		if(i == n)
@@ -57,11 +45,13 @@ private:
 
 	Node* head;
 	Node* tail;
+	Node* iterator;
 
 public:	
 	LinkedList(int s = 1, int e = 10)
 	{
 		this->head = createList(s, e);
+		this->iterator = this->head;
 	}
 
 	LinkedList()
@@ -111,27 +101,158 @@ public:
 		}
 		cout << "]" << endl;
 	}
+
+	int getLength()
+	{
+		int len = 0;			
+		Node* ptr = this->head; 
+		while(ptr)
+		{
+			ptr = ptr->next;
+			len++;
+		}
+		return len;
+	}
+
+	Node* getTail()
+	{
+		return this->tail;
+	}
+
+	void setTail(Node* newTail)
+	{
+		this->tail = newTail;
+	}
+
+	Node* getKthNodeFromStart(int k)
+	{
+		Node* ptr = this->head;
+		while(k and ptr)
+		{
+			k -= 1;
+			ptr = ptr->next;
+		}
+		return ptr;
+	}
+
+	bool hasNext()
+	{
+		if (this->iterator == nullptr)
+			return false;
+		return true;
+	}
+
+	Node* getNext()
+	{
+		this->iterator = this->iterator->next;
+		return this->iterator;
+	}
+
+	Node* initIterator()
+	{
+		return this->iterator = this->head;
+	}
 };
 
 class Solution 
 {
 public:
-	void connect(LinkedList *lst1, int n, LinkedList *lst2, int m, int pos)
+
+	Node* findIntersection(LinkedList *lst1, LinkedList *lst2)
 	{
-		cout << "Create This code\n";
+		unordered_set<Node*> mp;
+		int n = lst1->getLength();
+		int m = lst2->getLength();
+		if (m < n)
+		{
+			swap(lst1, lst2);
+		}
+		Node* itr = lst1->initIterator();
+		while(lst1->hasNext())
+		{
+			mp.insert(itr);
+			itr = lst1->getNext();
+		} 
+
+		itr = lst2->initIterator();
+		while(lst2->hasNext())
+		{
+			if (mp.find(itr) != mp.end())
+				return itr;
+			mp.insert(itr);
+			itr = lst2->getNext();
+		} 
+		return nullptr;
+	}
+
+
+	void RemoveIntersection(LinkedList *lst1, LinkedList *lst2)
+	{
+		unordered_set<Node*> mp;
+		int n = lst1->getLength();
+		int m = lst2->getLength();
+		if (m < n)
+		{
+			swap(lst1, lst2);
+		}
+		Node* itr = lst1->initIterator();
+		while(lst1->hasNext())
+		{
+			mp.insert(itr);
+			itr = lst1->getNext();
+		} 
+		Node* pre = nullptr;
+		itr = lst2->initIterator();
+		while(lst2->hasNext())
+		{
+			if (mp.find(itr) != mp.end())
+			{
+				pre->next = nullptr;
+				return;
+			}
+			mp.insert(itr);
+			pre = itr;
+			itr = lst2->getNext();
+		} 
+	}
+
+	void connect(LinkedList* lst1, int n, LinkedList* lst2, int m, int pos) {
+	    Node* ptr1 = lst1->getKthNodeFromStart(pos);
+	    Node* ptr2 = lst2->getTail();
+
+	    if (!ptr1 or !ptr2) 
+	    {
+	        cout << "Invalid connection attempt" << endl;
+	        return;
+	    }
+	    ptr2->next = ptr1;
+	    lst2->setTail(lst1->getTail());
 	}
 
     void solve()
     {
     	int n, m;
-    	cin >> n >> m;
-    	int random = min(n-2, m);
-       	LinkedList *lst1 = new LinkedList(3, n);
-       	LinkedList *lst2 = new LinkedList(1, m);
-       	lst1->print();
-       	lst2->print();
-       	cout << random << endl;
-       	connect(lst1, n, lst2, m, random);
+	    cin >> n >> m;
+	    if (n <= 2 || m <= 0) {
+	        cout << "Invalid sizes" << endl;
+	        return;
+	    }
+	    int random = rand() % (n - 2);
+	    LinkedList* lst1 = new LinkedList(3, n);
+	    LinkedList* lst2 = new LinkedList(1, m);
+	    connect(lst1, n, lst2, m, random);
+	    // Now we will try to find the intersection of two list.
+	    Node* intersect = findIntersection(lst1, lst2);
+	    if ( intersect == nullptr )
+	    	return;
+	    cout << "The two List are intersecting at Point " << intersect->data << endl;
+	    lst1->print();
+	    lst2->print();
+
+	    cout << "Removing the Intersection in List" << endl;
+	    RemoveIntersection(lst1, lst2);
+	    lst1->print();
+	    lst2->print();
     }
 };
 
@@ -155,15 +276,16 @@ Sample Input:
 
 1
 11
-10
+9
 
 Sample Output:
 
 TestCase #1 :
-List : [ 1 2 3 4 5 6 7 8 9 10 11 ]
-The Middle Node from Above Lst is 6
-TestCase #2 :
-List : [ 1 2 3 4 5 6 7 8 9 10 ]
-The Middle Node from Above Lst is 5 6
+The two List are intersecting at Point 7
+List : [ 3 4 5 6 7 8 9 10 11 ]
+List : [ 1 2 3 4 5 6 7 8 9 7 8 9 10 11 ]
+Removing the Intersection in List
+List : [ 3 4 5 6 7 8 9 10 11 ]
+List : [ 1 2 3 4 5 6 7 8 9 ]
 
 */
