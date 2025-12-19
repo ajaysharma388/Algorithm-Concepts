@@ -1,3 +1,18 @@
+# 1. Ignore all files by default
+*
+
+# 2. Allow all directories (so Git can search them)
+!*/
+
+# 3. Allow files with extensions (files containing a dot)
+!*.*
+
+# 4. Explicitly ignore Mac system files and compiled objects
+# This must come AFTER the rules above to work correctly
 .DS_Store
-.txt
-.exe
+*.txt
+*.exe
+**/.DS_Store
+*.o
+*.dSYM/
+
