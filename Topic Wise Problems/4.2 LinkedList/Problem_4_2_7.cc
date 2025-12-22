@@ -131,7 +131,7 @@ public:
 
 	void ValidateIfPalindromic()
 	{
-		if (this->isPalindromic())
+		if (this->isPalindrome())
        	{
        		cout << "Yes the LinkedList is Palindromic" << endl;
        	}
@@ -140,6 +140,55 @@ public:
        		cout << "The LinkedList is not Palindromic" << endl;
        	}
 	}
+
+	bool isPalindrome() 
+	{
+	    if (!this->head or !this->head->next) return true;
+
+	    // Step 1: Find middle
+	    Node* slow = head;
+	    Node* fast = head;
+	    while (fast->next && fast->next->next) {
+	        slow = slow->next;
+	        fast = fast->next->next;
+	    }
+
+	    // Step 2: Reverse second half
+	    Node* prev = nullptr;
+	    Node* cur = slow->next;
+	    while (cur) {
+	        Node* next = cur->next;
+	        cur->next = prev;
+	        prev = cur;
+	        cur = next;
+	    }
+
+	    // Step 3: Compare halves
+	    Node* p1 = head;
+	    Node* p2 = prev; // head of reversed second half
+	    bool palindrome = true;
+	    while (p2) {
+	        if (p1->data != p2->data) {
+	            palindrome = false;
+	            break;
+	        }
+	        p1 = p1->next;
+	        p2 = p2->next;
+	    }
+
+	    // Step 4: Restore list (optional)
+	    cur = prev;
+	    prev = nullptr;
+	    while (cur) {
+	        Node* next = cur->next;
+	        cur->next = prev;
+	        prev = cur;
+	        cur = next;
+	    }
+	    slow->next = prev;
+	    return palindrome;
+	}
+
 };
 
 class Solution 
