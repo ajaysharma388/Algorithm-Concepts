@@ -231,10 +231,16 @@
 
 ---
 
-## 14. Bit Manipulation
+## 14. Design Problems
+*(to be expanded with implementations)*  
+
+
+---
+
+## 15. Bit Manipulation
 *(to be expanded with implementations)*  
 
 ---
 
-## 15. Mathematical Algorithms
+## 16. Mathematical Algorithms
 *(to be expanded with implementations)*  
