@@ -21,10 +21,12 @@ class Node {
 public:
 	int data;
 	Node* next;
+	Node* random;
 	Node(int data)
 	{
 		this->data = data;
 		this->next = nullptr;
+		this->random = nullptr;
 	}
 };
 
@@ -76,44 +78,37 @@ public:
 		}
 		cout << "]" << endl;
 	}
-
-	void print_Loop()
+	// this is the function which creates the deep copy of the nodes.
+	Node* cloneListWithRandom(Node* head) 
 	{
-		int len = 3*getLength();
-		Node* cur = this->head;
-		cout << "Loop List : [ ";
-		while(len)
-		{
-			cout << cur->data << " ";
-			cur = cur->next;
-			len -= 1;
-		}
-		cout << "]" << endl;
-	}
-
-	bool detectLoop()
-	{
-		Node* slow = this->head;
-		Node* fast = this->head;
-		while(fast and fast->next)
-		{	
-			slow = slow->next;
-			fast = fast->next->next;
-			if(slow == fast) return true;
-		}
-		return false;
-	}
-
-	void createLoop()
-	{
-		int pos = this->getLength()/2;
-		Node* ptr = this->head;
-		while(pos--)
-		{
-			ptr = ptr->next;
-		}
-		this->tail->next = ptr;
-	}
+        unordered_map<Node*, Node*> mp;
+        Node* tmp = head;
+        Node* newHead = NULL;
+        Node* itr;
+        while( tmp ) {
+            if(newHead == NULL) 
+            {
+                newHead = new Node(tmp->data);
+                itr = newHead;
+                mp[tmp] = newHead;
+            } else {
+                itr->next = new Node(tmp->data);
+                itr = itr->next;
+                mp[tmp] = itr;
+            }
+            tmp = tmp->next;
+        }
+        tmp = head;
+        itr = newHead;
+        while(tmp) {
+            if(tmp->random) {
+                itr->random = mp[tmp->random];
+            }
+            itr = itr->next;
+            tmp = tmp->next;
+        }
+        return newHead;
+    }
 };
 
 class Solution 
@@ -125,16 +120,6 @@ public:
     	cin >> n;
        	LinkedList *lst = new LinkedList(n);
        	lst->print();
-       	lst->createLoop();
-       	if(lst->detectLoop())
-       	{
-       		cout << "Loop Found in the LinkedList" << endl;
-       	}
-       	else 
-       	{
-       		cout << "Loop is Not Present in LinkedList" << endl;
-       	}
-       	lst->print_Loop();
     }
 };
 
