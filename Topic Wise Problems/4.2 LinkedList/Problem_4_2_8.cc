@@ -77,42 +77,77 @@ public:
 		cout << "]" << endl;
 	}
 
-	void print_Loop()
+	void print(Node* head)
 	{
-		int len = 3*getLength();
-		Node* cur = this->head;
-		cout << "Loop List : [ ";
-		while(len)
+		Node* cur = head;
+		cout << "List : [ ";
+		while( cur )
 		{
 			cout << cur->data << " ";
 			cur = cur->next;
-			len -= 1;
 		}
 		cout << "]" << endl;
 	}
 
-	bool detectLoop()
+	Node* reverse(Node* head)
 	{
-		Node* slow = this->head;
-		Node* fast = this->head;
-		while(fast and fast->next)
-		{	
-			slow = slow->next;
-			fast = fast->next->next;
-			if(slow == fast) return true;
+		Node* newHead = nullptr;
+		Node* ptr = head;
+		while(ptr)
+		{
+			Node* tmp = ptr->next;
+			if(newHead == nullptr)
+			{
+				newHead = ptr;
+				ptr->next = nullptr;
+			}
+			else
+			{
+				ptr->next = newHead;
+				newHead = ptr;
+			}
+			ptr = tmp;
 		}
-		return false;
+		return newHead;
 	}
 
-	void createLoop()
+	void reverseInKGroups(int k)
 	{
-		int pos = this->getLength()/2;
-		Node* ptr = this->head;
-		while(pos--)
+		vector<pair<Node*, Node*>> groups;
+		Node* tmp = this->head;
+		int len = 0;
+		while(tmp)
 		{
-			ptr = ptr->next;
+			groups.push_back({tmp, nullptr});
+			Node* prev = tmp;
+			for(int i = 0; i < k; ++i)
+			{
+				prev = tmp;
+				tmp = tmp->next;
+				if(tmp == nullptr) break;
+			}
+			prev->next = nullptr;
+			groups[len].second = prev;
+			len++;
 		}
-		this->tail->next = ptr;
+		for(int i = 0; i < groups.size(); i+=2)
+		{
+			groups[i].second = reverse(groups[i].first);
+			swap(groups[i].second, groups[i].first);
+		}
+		this->head = nullptr;
+		for(auto nodes: groups)
+		{
+			if(this->head == nullptr)
+			{
+				this->head = nodes.first;
+			}
+			else
+			{
+				this->tail->next = nodes.first;
+			}
+			this->tail = nodes.second;
+		}
 	}
 };
 
@@ -121,20 +156,12 @@ class Solution
 public:
     void solve()
     {
-    	int n;
-    	cin >> n;
+    	int n, k;
+    	cin >> n >> k;
        	LinkedList *lst = new LinkedList(n);
        	lst->print();
-       	lst->createLoop();
-       	if(lst->detectLoop())
-       	{
-       		cout << "Loop Found in the LinkedList" << endl;
-       	}
-       	else 
-       	{
-       		cout << "Loop is Not Present in LinkedList" << endl;
-       	}
-       	lst->print_Loop();
+       	lst->reverseInKGroups(k);
+       	lst->print();
     }
 };
 
@@ -155,14 +182,20 @@ int main()
 /*
 Sample Input:
 
-1
-6
+3
+10 3
+20 4
+11 2
 
 Sample Output:
 
 TestCase #1 :
-List : [ 1 2 3 4 5 6 ]
-Loop Found in the LinkedList
-Loop List : [ 1 2 3 4 5 6 3 4 5 6 3 4 5 6 3 ]
-
+List : [ 1 2 3 4 5 6 7 8 9 10 ]
+List : [ 3 2 1 4 5 6 9 8 7 10 ]
+TestCase #2 :
+List : [ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ]
+List : [ 4 3 2 1 5 6 7 8 12 11 10 9 13 14 15 16 20 19 18 17 ]
+TestCase #3 :
+List : [ 1 2 3 4 5 6 7 8 9 10 11 ]
+List : [ 2 1 3 4 6 5 7 8 10 9 11 ]
 */
