@@ -1,2 +1,0 @@
-Pair found: 8, 10
-Pair found: 10, 8
