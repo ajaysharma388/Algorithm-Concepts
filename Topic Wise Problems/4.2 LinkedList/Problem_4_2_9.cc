@@ -109,6 +109,35 @@ public:
         }
         return newHead;
     }
+
+/*
+Pythonic Solution is as follows.
+
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        node_map = defaultdict()
+        newHead = None
+        prev = head
+        ptr = head
+        while ptr:
+            tmp = Node(ptr.val)
+            if newHead == None:
+                newHead = tmp
+            else:
+                prev.next = tmp
+            node_map[ptr] = tmp
+            prev = tmp
+            ptr = ptr.next
+        
+        ptr = head
+        cur = newHead
+        while ptr and cur:
+            if ptr.random:
+                node_map[ptr].random = node_map[ptr.random]
+            ptr = ptr.next
+            cur = cur.next
+        return newHead
+    */
 };
 
 class Solution 
