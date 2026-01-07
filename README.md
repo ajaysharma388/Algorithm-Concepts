@@ -180,7 +180,6 @@
 - [Sudoku solver](Backtracking/04_sudoku.cpp)  
 - [Rat in a maze](Backtracking/05_rat_maze.cpp)  
 
-
 ---
 
 ## 11. Pattern Searching
