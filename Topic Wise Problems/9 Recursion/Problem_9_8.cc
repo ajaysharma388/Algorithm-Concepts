@@ -20,25 +20,9 @@ void fastio(bool read = false)
 class Solution 
 {
 public:
-
-	int getPossibleBinaryStrings(int n)
-	{
-		if(n <= 0)
-		{
-			return 1;
-		}
-		// if we put the 0 at the current position.
-		int zero = getPossibleBinaryStrings(n-1); 
-		// if we put the 1 at the current position that means we cannot place another one at next pos.
-		int one = getPossibleBinaryStrings(n-2); 
-		return one+zero;
-	}
-
     int solve()
     {
-    	int n;
-    	cin >> n;
-      	return getPossibleBinaryStrings(n);
+       return 0;
     }
 };
 
@@ -58,16 +42,6 @@ int main()
 /*
 Sample Input:
 
-4
-2
-5
-6 
-7
-
 Sample Output:
 
-TestCase #1 : 3
-TestCase #2 : 13
-TestCase #3 : 21
-TestCase #4 : 34
 */
