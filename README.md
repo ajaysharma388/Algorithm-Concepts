@@ -161,11 +161,11 @@
 ---
 
 ## 9. Recursion Problems
-- [Factorial of given number n](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_1.cc)  
-- [Fibonacci Numbers upto n](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_2.cc)  
-- [Check if array is Sorted](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_3.cc)  
-- [](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_4.cc)  
-- [](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_5.cc)  
+- [Factorial of given number n](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_1.cc)  
+- [Fibonacci Numbers upto n](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_2.cc)  
+- [Check if array is Sorted](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_3.cc)  
+- [Print increasing and decreasing numbers](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_4.cc)  
+- [Print the nth power of number m](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_5.cc)  
 - [](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_6.cc)  
 - [](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_7.cc)  
 
