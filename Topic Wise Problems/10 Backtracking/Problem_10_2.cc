@@ -57,29 +57,33 @@ int main()
         Solution *s = new Solution();
         cout << "TestCase #" << t << " : "<< endl;
         int res = s->solve();
-        cout << "Number of Subsets are: " << res << endl;        
+        cout << "Number of Permutations are: " << res << endl;        
     }
     return 0;
 }
 
 /*
-Sample Input:
 
-2
+Sample Input:
+3
+AB
 abc
 ABCD
 
 Sample Output:
-
 TestCase #1 : 
+1: AB
+2: BA
+Number of Permutations are: 2
+TestCase #2 : 
 1: abc
 2: acb
 3: bac
 4: bca
 5: cba
 6: cab
-Number of Subsets are: 6
-TestCase #2 : 
+Number of Permutations are: 6
+TestCase #3 : 
 1: ABCD
 2: ABDC
 3: ACBD
@@ -104,7 +108,5 @@ TestCase #2 :
 22: DCAB
 23: DACB
 24: DABC
-Number of Subsets are: 24
-
-
+Number of Permutations are: 24
 */
