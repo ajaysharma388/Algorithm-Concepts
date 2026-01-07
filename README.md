@@ -174,11 +174,11 @@
 ---
 
 ## 10. Backtracking
-- [All permutations of a string](Backtracking/01_permutations.cpp)  
-- [Subset sum problem](Backtracking/02_subset_sum.cpp)  
-- [Partition set into two subsets with min difference](Backtracking/03_partition_min_diff.cpp)  
-- [Sudoku solver](Backtracking/04_sudoku.cpp)  
-- [Rat in a maze](Backtracking/05_rat_maze.cpp)  
+- [All permutations of a string](/Topic%20Wise%20Problems/10%20Backtracking/Problem_10_1.cc)
+- [Subset sum problem](/Topic%20Wise%20Problems/10%20Backtracking/Problem_10_2.cc)
+- [Partition set into two subsets with min difference](/Topic%20Wise%20Problems/10%20Backtracking/Problem_10_3.cc)
+- [Sudoku solver](/Topic%20Wise%20Problems/10%20Backtracking/Problem_10_4.cc)
+- [Rat in a maze](/Topic%20Wise%20Problems/10%20Backtracking/Problem_10_5.cc)
 
 ---
 
