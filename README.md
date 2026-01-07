@@ -166,8 +166,10 @@
 - [Check if array is Sorted](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_3.cc)  
 - [Print increasing and decreasing numbers](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_4.cc)  
 - [Print the nth power of number m](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_5.cc)  
-- [](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_6.cc)  
-- [](/Topic%20Wise%20Problems/9%20Recursion/Problem_4_1_7.cc)  
+- [Tilling Problem](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_6.cc)  
+- [Count Strings](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_7.cc)  
+- [Friends Pairing](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_8.cc)  
+- [Tower Of Hanio Problem](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_9.cc) 
 
 ---
 
