@@ -160,16 +160,30 @@
 
 ---
 
-## 9. Backtracking
+## 9. Recursion Problems
+- [Factorial of given number n](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_1.cc)  
+- [Fibonacci Numbers upto n](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_2.cc)  
+- [Check if array is Sorted](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_3.cc)  
+- [Print increasing and decreasing numbers](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_4.cc)  
+- [Print the nth power of number m](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_5.cc)  
+- [Tilling Problem](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_6.cc)  
+- [Count Strings](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_7.cc)  
+- [Friends Pairing](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_8.cc)  
+- [Tower Of Hanio Problem](/Topic%20Wise%20Problems/9%20Recursion/Problem_9_9.cc) 
+
+---
+
+## 10. Backtracking
 - [All permutations of a string](Backtracking/01_permutations.cpp)  
 - [Subset sum problem](Backtracking/02_subset_sum.cpp)  
 - [Partition set into two subsets with min difference](Backtracking/03_partition_min_diff.cpp)  
 - [Sudoku solver](Backtracking/04_sudoku.cpp)  
 - [Rat in a maze](Backtracking/05_rat_maze.cpp)  
 
+
 ---
 
-## 10. Pattern Searching
+## 11. Pattern Searching
 - [Naive pattern search](PatternSearching/01_naive.cpp)  
 - [Rabin-Karp algorithm](PatternSearching/02_rabin_karp.cpp)  
 - [Finite automata approach](PatternSearching/03_finite_automata.cpp)  
@@ -180,14 +194,14 @@
 
 ---
 
-## 11. Greedy Algorithms
+## 12. Greedy Algorithms
 - [Minimum time to finish jobs](Greedy/01_min_time_jobs.cpp)  
 - [Minimum cost set cover](Greedy/02_set_cover.cpp)  
 - [Warehouse placement problem](Greedy/03_warehouse.cpp)  
 
 ---
 
-## 12. Dynamic Programming
+## 13. Dynamic Programming
 - [Longest increasing subsequence](DP/01_lis.cpp)  
 - [Longest common subsequence](DP/02_lcs.cpp)  
 - [Minimum cost path in matrix](DP/03_min_cost_path.cpp)  
@@ -216,7 +230,7 @@
 
 ---
 
-## 13. Graphs
+## 14. Graphs
 - [Detect cycle in directed graph](Graphs/01_cycle_directed.cpp)  
 - [Detect cycle in undirected graph](Graphs/02_cycle_undirected.cpp)  
 - [Path existence between two vertices](Graphs/03_path_exists.cpp)  
@@ -231,16 +245,16 @@
 
 ---
 
-## 14. Design Problems
+## 15. Design Problems
 *(to be expanded with implementations)*  
 
 
 ---
 
-## 15. Bit Manipulation
+## 16. Bit Manipulation
 *(to be expanded with implementations)*  
 
 ---
 
-## 16. Mathematical Algorithms
+## 17. Mathematical Algorithms
 *(to be expanded with implementations)*  
