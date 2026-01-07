@@ -20,9 +20,17 @@ void fastio(bool read = false)
 class Solution 
 {
 public:
+	int numberOfWaysToGo(int n)
+	{
+		if(n == 0 or n == 1) return 1;
+		return numberOfWaysToGo(n-1) + (n-1)*numberOfWaysToGo(n-2);
+	}
+
     int solve()
     {
-       return 0;
+    	int n;
+    	cin >> n;
+    	return numberOfWaysToGo(n);
     }
 };
 
@@ -42,6 +50,16 @@ int main()
 /*
 Sample Input:
 
+4
+1
+2
+3
+4
+
 Sample Output:
 
+TestCase #1 : 1
+TestCase #2 : 2
+TestCase #3 : 4
+TestCase #4 : 10
 */
